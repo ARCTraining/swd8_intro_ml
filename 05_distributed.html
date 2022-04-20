@@ -1,0 +1,1938 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distributed &#8212; SWD8: Introduction to Machine Learning</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Solutions" href="06_solutions.html" />
+    <link rel="prev" title="Models" href="04_models.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SWD8: Introduction to Machine Learning</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   SWD8: Introduction to Machine Learning
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="00_overview.html">
+   Overview
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_fundamentals.html">
+     Fundamentals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_tools.html">
+     Tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_data.html">
+     Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_models.html">
+     Models
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Distributed
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_solutions.html">
+     Solutions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_summary.html">
+   Summary
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/05_distributed.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ARCTraining/swd8_intro_ml"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ARCTraining/swd8_intro_ml/issues/new?title=Issue%20on%20page%20%2F05_distributed.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ARCTraining/swd8_intro_ml/main?urlpath=tree/docs/05_distributed.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ray-train">
+   Ray Train
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-tensorflow-keras-mnist">
+     Example: TensorFlow (Keras) MNIST
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#define-callback-for-reporting">
+       Define callback for reporting
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#set-up-the-dataset-and-model">
+       Set up the dataset and model
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#set-up-the-training-function-for-a-single-worker">
+       Set up the training function for a
+       <em>
+        single
+       </em>
+       worker
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#update-training-function">
+       Update training function
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-ray-train-trainer">
+       Create Ray Train Trainer
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#run-the-training">
+       Run the training
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#submit-the-job-to-hpc">
+       Submit the job to HPC
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#cpus">
+         CPUs
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#gpu-s">
+         GPU(s)
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-tensorflow-keras-transfer-learning">
+     Example:
+     <span class="xref myst">
+      TensorFlow (Keras) transfer learning
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pytorch-lightning">
+   PyTorch (Lightning)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebook-to-hpc">
+   Jupyter Notebook to HPC
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clean-non-essential-code">
+     Clean non-essential code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#refactor-jupyter-notebook-code-into-functions">
+     Refactor Jupyter Notebook code into functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-python-script">
+     Create a Python script
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-1-recommended">
+       Option 1 (recommended)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-2">
+       Option 2
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-3">
+       Option 3
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-submission-script">
+     Create submission script
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optional-create-unit-tests">
+     (Optional) Create unit tests
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solutions">
+   <span class="xref std std-ref">
+    Solutions
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-points">
+   Key Points
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-information">
+   Further information
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#good-practices">
+     Good practices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-options">
+     Other options
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resources">
+     Resources
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Distributed</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ray-train">
+   Ray Train
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-tensorflow-keras-mnist">
+     Example: TensorFlow (Keras) MNIST
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#define-callback-for-reporting">
+       Define callback for reporting
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#set-up-the-dataset-and-model">
+       Set up the dataset and model
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#set-up-the-training-function-for-a-single-worker">
+       Set up the training function for a
+       <em>
+        single
+       </em>
+       worker
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#update-training-function">
+       Update training function
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-ray-train-trainer">
+       Create Ray Train Trainer
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#run-the-training">
+       Run the training
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#submit-the-job-to-hpc">
+       Submit the job to HPC
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#cpus">
+         CPUs
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#gpu-s">
+         GPU(s)
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-tensorflow-keras-transfer-learning">
+     Example:
+     <span class="xref myst">
+      TensorFlow (Keras) transfer learning
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pytorch-lightning">
+   PyTorch (Lightning)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebook-to-hpc">
+   Jupyter Notebook to HPC
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clean-non-essential-code">
+     Clean non-essential code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#refactor-jupyter-notebook-code-into-functions">
+     Refactor Jupyter Notebook code into functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-python-script">
+     Create a Python script
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-1-recommended">
+       Option 1 (recommended)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-2">
+       Option 2
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-3">
+       Option 3
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-submission-script">
+     Create submission script
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optional-create-unit-tests">
+     (Optional) Create unit tests
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solutions">
+   <span class="xref std std-ref">
+    Solutions
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-points">
+   Key Points
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-information">
+   Further information
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#good-practices">
+     Good practices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-options">
+     Other options
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resources">
+     Resources
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="distributed">
+<h1>Distributed<a class="headerlink" href="#distributed" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://colab.research.google.com/github/ARCTraining/swd8_intro_ml/blob/main/docs/05_distributed.ipynb"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you’re in COLAB or have a local CUDA GPU, you can follow along with the more computationally intensive training in this lesson.</p>
+<p>For those in COLAB, ensure the session is using a GPU by going to: Runtime &gt; Change runtime type &gt; Hardware accelerator = GPU.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># if you&#39;re using colab, then install the required modules</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">IN_COLAB</span> <span class="o">=</span> <span class="s2">&quot;google.colab&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span>
+<span class="k">if</span> <span class="n">IN_COLAB</span><span class="p">:</span>
+    <span class="o">%</span><span class="k">pip</span> install --quiet --upgrade ray
+</pre></div>
+</div>
+</div>
+</div>
+<p>Distributing training over multiple devices generally uses either:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#data-parallelism">Data parallelism</a></p>
+<ul>
+<li><p><em>Split the <strong>data</strong> over multiple devices.</em></p></li>
+<li><p>Single model copied to multiple devices.</p></li>
+<li><p>Useful for big data.</p></li>
+<li><p>Simpler.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#model-parallelism">Model parallelism</a></p>
+<ul>
+<li><p><em>Split the <strong>model</strong> over multiple devices.</em></p></li>
+<li><p>Single data copied to multiple devices.</p></li>
+<li><p>Can be useful for big models (for some architectures).</p></li>
+<li><p>More complex.</p></li>
+</ul>
+</li>
+</ul>
+<p>This lesson focuses on data parallelism.</p>
+<div class="section" id="ray-train">
+<h2><a class="reference external" href="https://docs.ray.io/en/latest/train/train.html">Ray Train</a><a class="headerlink" href="#ray-train" title="Permalink to this headline">¶</a></h2>
+<p>Ray Train is a useful tool for distributed deep learning training for <a class="reference external" href="https://www.tensorflow.org/tutorials/distribute/multi_worker_with_keras">TensorFlow (Keras)</a> and <a class="reference external" href="https://pytorch.org/tutorials/beginner/dist_overview.html">PyTorch</a>.</p>
+<p>It handles the set up for you (e.g., <a class="reference external" href="https://www.tensorflow.org/guide/distributed_training#setting_up_the_tf_config_environment_variable"><code class="docutils literal notranslate"><span class="pre">TF_CONFIG</span></code></a> in TensorFlow).</p>
+<p>There are a range of examples <a class="reference external" href="https://docs.ray.io/en/latest/train/examples.html">here</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Note, Ray doesn’t currently work on POWER9 machines e.g., Bede. See, <a class="reference external" href="https://github.com/ray-project/ray/issues/7476">GitHub issue</a>.</p>
+</div>
+<div class="section" id="example-tensorflow-keras-mnist">
+<h3>Example: <a class="reference external" href="https://docs.ray.io/en/latest/train/examples/tensorflow_mnist_example.html">TensorFlow (Keras) MNIST</a><a class="headerlink" href="#example-tensorflow-keras-mnist" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">ray</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">from</span> <span class="nn">ray.train</span> <span class="kn">import</span> <span class="n">Trainer</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.callbacks</span> <span class="kn">import</span> <span class="n">Callback</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-04-20 14:10:53.378652: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-04-20 14:10:53.378690: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="define-callback-for-reporting">
+<h4><a class="reference external" href="https://docs.ray.io/en/latest/train/user_guide.html#logging-monitoring-and-callbacks">Define callback for reporting</a><a class="headerlink" href="#define-callback-for-reporting" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TrainReportCallback</span><span class="p">(</span><span class="n">Callback</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">on_epoch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">logs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">ray</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="o">**</span><span class="n">logs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="set-up-the-dataset-and-model">
+<h4>Set up the dataset and model<a class="headerlink" href="#set-up-the-dataset-and-model" title="Permalink to this headline">¶</a></h4>
+<p>The dataset will be split (sharded) across the workers.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The default <a class="reference external" href="https://www.tensorflow.org/tutorials/distribute/input#sharding">auto-sharding</a> by <code class="docutils literal notranslate"><span class="pre">FILE</span></code> can cause warning messages if the data is in one file. Instead, you can specify to auto-shard by data using: <code class="docutils literal notranslate"><span class="pre">tf.data.experimental.AutoShardPolicy.DATA</span></code> (which it will fall back to anyway).</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mnist_dataset</span><span class="p">(</span><span class="n">batch_size</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="n">_</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+    <span class="c1"># The `x` arrays are in uint8 and have values in the [0, 255] range.</span>
+    <span class="c1"># You need to convert them to float32 with values in the [0, 1] range.</span>
+    <span class="n">x_train</span> <span class="o">=</span> <span class="n">x_train</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">y_train</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_tensor_slices</span><span class="p">((</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">))</span>
+        <span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="mi">60000</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">repeat</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">batch_size</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">options</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Options</span><span class="p">()</span>
+    <span class="n">options</span><span class="o">.</span><span class="n">experimental_distribute</span><span class="o">.</span><span class="n">auto_shard_policy</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">experimental</span><span class="o">.</span><span class="n">AutoShardPolicy</span><span class="o">.</span><span class="n">DATA</span>
+    <span class="p">)</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">with_options</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ds_train</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When building the model, a <code class="docutils literal notranslate"><span class="pre">config</span></code> keyword argument is added to get different options such as the learning rate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build_and_compile_cnn_model</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+    <span class="n">learning_rate</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;lr&quot;</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)),</span>
+            <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Reshape</span><span class="p">(</span><span class="n">target_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+            <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">),</span>
+            <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span>
+            <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">),</span>
+            <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+        <span class="n">loss</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">SparseCategoricalCrossentropy</span><span class="p">(</span><span class="n">from_logits</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">optimizer</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">),</span>
+        <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">model</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="set-up-the-training-function-for-a-single-worker">
+<h4>Set up the training function for a <em>single</em> worker<a class="headerlink" href="#set-up-the-training-function-for-a-single-worker" title="Permalink to this headline">¶</a></h4>
+<p>This also uses the <code class="docutils literal notranslate"><span class="pre">config</span></code> argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">train_func</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+    <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">64</span>
+    <span class="n">single_worker_dataset</span> <span class="o">=</span> <span class="n">mnist_dataset</span><span class="p">(</span><span class="n">batch_size</span><span class="p">)</span>
+    <span class="n">single_worker_model</span> <span class="o">=</span> <span class="n">build_and_compile_cnn_model</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+    <span class="n">single_worker_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+        <span class="n">single_worker_dataset</span><span class="p">,</span>
+        <span class="n">epochs</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;epochs&quot;</span><span class="p">],</span>
+        <span class="n">steps_per_epoch</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, you <a class="reference external" href="https://docs.ray.io/en/latest/train/user_guide.html#configuring-training">configure training</a> using the <code class="docutils literal notranslate"><span class="pre">config</span></code> parameter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;epochs&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_func</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-04-20 14:10:55.425574: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-04-20 14:10:55.425638: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-04-20 14:10:55.425665: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az380-268): /proc/driver/nvidia/version does not exist
+2022-04-20 14:10:55.426023: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-20 14:10:55.427128: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 188160000 exceeds 10% of free system memory.
+2022-04-20 14:10:55.598422: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 188160000 exceeds 10% of free system memory.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="update-training-function">
+<h4><a class="reference external" href="https://docs.ray.io/en/latest/train/user_guide.html#update-training-function">Update training function</a><a class="headerlink" href="#update-training-function" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>Set the <em>global</em> batch size</p>
+<ul class="simple">
+<li><p>Each worker will process the same size batch as in the single-worker code.</p></li>
+</ul>
+</li>
+<li><p>Choose your TensorFlow distributed training strategy.</p>
+<ul class="simple">
+<li><p>In this example we use the <a class="reference external" href="https://www.tensorflow.org/guide/distributed_training#multiworkermirroredstrategy">MultiWorkerMirroredStrategy</a> for synchronous training of multiple workers across many machines.</p>
+<ul>
+<li><p>For multiple workers on <em>one</em> machine, use <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/distribute/MirroredStrategy">MirroredStrategy</a>.</p></li>
+<li><p>In general, the mirrored strategy mirrors the parameters across the workers, ensuring replicas are identical.</p></li>
+</ul>
+</li>
+<li><p>Within the strategy scope context manager, you build and compile the model.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">train_func</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+    <span class="n">per_worker_batch_size</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;batch_size&quot;</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+    <span class="n">epochs</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;epochs&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">steps_per_epoch</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;steps_per_epoch&quot;</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span>
+
+    <span class="n">tf_config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;TF_CONFIG&quot;</span><span class="p">])</span>
+    <span class="n">num_workers</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tf_config</span><span class="p">[</span><span class="s2">&quot;cluster&quot;</span><span class="p">][</span><span class="s2">&quot;worker&quot;</span><span class="p">])</span>
+
+    <span class="n">strategy</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">distribute</span><span class="o">.</span><span class="n">MultiWorkerMirroredStrategy</span><span class="p">()</span>
+
+    <span class="n">global_batch_size</span> <span class="o">=</span> <span class="n">per_worker_batch_size</span> <span class="o">*</span> <span class="n">num_workers</span>
+    <span class="n">multi_worker_dataset</span> <span class="o">=</span> <span class="n">mnist_dataset</span><span class="p">(</span><span class="n">global_batch_size</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">strategy</span><span class="o">.</span><span class="n">scope</span><span class="p">():</span>
+        <span class="c1"># model building/compiling need to be within strategy.scope()</span>
+        <span class="n">multi_worker_model</span> <span class="o">=</span> <span class="n">build_and_compile_cnn_model</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+
+    <span class="n">history</span> <span class="o">=</span> <span class="n">multi_worker_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+        <span class="n">multi_worker_dataset</span><span class="p">,</span>
+        <span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span>
+        <span class="n">steps_per_epoch</span><span class="o">=</span><span class="n">steps_per_epoch</span><span class="p">,</span>
+        <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">TrainReportCallback</span><span class="p">()],</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span>
+    <span class="k">return</span> <span class="n">results</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-ray-train-trainer">
+<h4><a class="reference external" href="https://docs.ray.io/en/latest/train/user_guide.html#create-ray-train-trainer">Create Ray Train Trainer</a><a class="headerlink" href="#create-ray-train-trainer" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">Trainer</span></code> manages state and training.</p>
+<p>Ray Train enables different <code class="docutils literal notranslate"><span class="pre">backend</span></code> options e.g., <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">train_tensorflow_mnist</span><span class="p">(</span><span class="n">num_workers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">use_gpu</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span><span class="n">backend</span><span class="o">=</span><span class="s2">&quot;tensorflow&quot;</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="n">num_workers</span><span class="p">,</span> <span class="n">use_gpu</span><span class="o">=</span><span class="n">use_gpu</span><span class="p">)</span>
+    <span class="n">trainer</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+        <span class="n">train_func</span><span class="o">=</span><span class="n">train_func</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;lr&quot;</span><span class="p">:</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="s2">&quot;batch_size&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span> <span class="s2">&quot;epochs&quot;</span><span class="p">:</span> <span class="n">epochs</span><span class="p">}</span>
+    <span class="p">)</span>
+    <span class="n">trainer</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Results: </span><span class="si">{</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="run-the-training">
+<h4><a class="reference external" href="https://docs.ray.io/en/latest/train/user_guide.html#run-training-function">Run the training</a><a class="headerlink" href="#run-the-training" title="Permalink to this headline">¶</a></h4>
+<p>Initialise and shutdown the Ray client:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ray</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;node_ip_address&#39;: &#39;10.1.0.252&#39;,
+ &#39;raylet_ip_address&#39;: &#39;10.1.0.252&#39;,
+ &#39;redis_address&#39;: None,
+ &#39;object_store_address&#39;: &#39;/tmp/ray/session_2022-04-20_14-11-02_200931_5459/sockets/plasma_store&#39;,
+ &#39;raylet_socket_name&#39;: &#39;/tmp/ray/session_2022-04-20_14-11-02_200931_5459/sockets/raylet&#39;,
+ &#39;webui_url&#39;: None,
+ &#39;session_dir&#39;: &#39;/tmp/ray/session_2022-04-20_14-11-02_200931_5459&#39;,
+ &#39;metrics_export_port&#39;: 35632,
+ &#39;gcs_address&#39;: &#39;10.1.0.252:38664&#39;,
+ &#39;address&#39;: &#39;10.1.0.252:38664&#39;,
+ &#39;node_id&#39;: &#39;83a451cb2ce1bdcf6c997a85b33ee7eb682db61586ca326825525f3f&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cpu</span>
+<span class="n">train_tensorflow_mnist</span><span class="p">()</span>
+
+<span class="c1"># gpu</span>
+<span class="c1"># train_tensorflow_mnist(use_gpu=True)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-04-20 14:11:05,463	INFO trainer.py:199 -- Trainer logs will be logged in: /home/runner/ray_results/train_2022-04-20_14-11-05
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-04-20 14:11:06,124	INFO trainer.py:205 -- Run results will be logged in: /home/runner/ray_results/train_2022-04-20_14-11-05/run_001
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Faint -Color-Faint-Cyan">(BackendExecutor pid=5585)</span> 2022-04-20 14:11:06.297392: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(BackendExecutor pid=5585)</span> 2022-04-20 14:11:06.297427: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Faint -Color-Faint-Cyan">(BaseWorkerMixin pid=5584)</span> 2022-04-20 14:11:07.860127: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(BaseWorkerMixin pid=5584)</span> 2022-04-20 14:11:07.860162: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Faint -Color-Faint-Cyan">(BaseWorkerMixin pid=5584)</span> 2022-04-20 14:11:09.313065: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(BaseWorkerMixin pid=5584)</span> 2022-04-20 14:11:09.313115: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(BaseWorkerMixin pid=5584)</span> 2022-04-20 14:11:09.313138: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az380-268): /proc/driver/nvidia/version does not exist
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(BaseWorkerMixin pid=5584)</span> 2022-04-20 14:11:09.313652: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(BaseWorkerMixin pid=5584)</span> To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(BaseWorkerMixin pid=5584)</span> 2022-04-20 14:11:09.318962: I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:272] Initialize GrpcChannelCache for job worker -&gt; {0 -&gt; 10.1.0.252:44783}
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(BaseWorkerMixin pid=5584)</span> 2022-04-20 14:11:09.319177: I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:437] Started server with target: grpc://10.1.0.252:44783
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Faint -Color-Faint-Cyan">(BaseWorkerMixin pid=5584)</span> 2022-04-20 14:11:09.798220: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 188160000 exceeds 10% of free system memory.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Faint -Color-Faint-Cyan">(BaseWorkerMixin pid=5584)</span> 2022-04-20 14:11:10.028266: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 188160000 exceeds 10% of free system memory.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(BaseWorkerMixin pid=5584)</span> 2022-04-20 14:11:10.184356: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 188160000 exceeds 10% of free system memory.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Faint -Color-Faint-Cyan">(BaseWorkerMixin pid=5584)</span> 2022-04-20 14:11:10.353393: W tensorflow/core/framework/dataset.cc:768] Input of GeneratorDatasetOp::Dataset will not be optimized because the dataset does not implement the AsGraphDefInternal() method needed to apply optimizations.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Results: {&#39;loss&#39;: [2.292433500289917, 2.246882677078247, 2.1941006183624268, 2.1309409141540527], &#39;accuracy&#39;: [0.14263392984867096, 0.28035715222358704, 0.3734374940395355, 0.4895089268684387]}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ray</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="submit-the-job-to-hpc">
+<h4>Submit the job to HPC<a class="headerlink" href="#submit-the-job-to-hpc" title="Permalink to this headline">¶</a></h4>
+<p>This Python script is in full <a class="reference external" href="https://github.com/ARCTraining/swd8_intro_ml/blob/main/docs/distributed/tensorflow_ray_train_mnist_example.py">here</a>.</p>
+<div class="section" id="cpus">
+<h5>CPUs<a class="headerlink" href="#cpus" title="Permalink to this headline">¶</a></h5>
+<p>An example job submission script is (also <a class="reference external" href="https://github.com/ARCTraining/swd8_intro_ml/blob/main/docs/distributed/distributed_ml_on_arc4_cpu.bash">here</a>):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#$ -cwd</span>
+<span class="c1">#$ -l h_rt=00:30:00</span>
+<span class="c1">#$ -pe smp 12</span>
+<span class="c1">#$ -l h_vmem=6G</span>
+
+<span class="c1"># activate conda and add to library path</span>
+conda activate swd8_intro_ml
+<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LD_LIBRARY_PATH</span>:<span class="nv">$CONDA_PREFIX</span>/lib
+
+<span class="c1"># run the CPU script</span>
+python tensorflow_ray_train_mnist_example.py --num-workers <span class="m">12</span> --epochs <span class="m">100</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Sometimes the <code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code> variable will not include the path to the conda environment, resulting it in being unable to find some libraries e.g., TensorFlow, cuDNN.</p>
+<p>To resolve this, in your script append the path to your activated conda environment to the <code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code> variable using:</p>
+<p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib</span></code></p>
+</div>
+<p>To change the number of workers (either CPUs or GPUs), set the <code class="docutils literal notranslate"><span class="pre">--num-workers</span></code> argument.</p>
+<p>Ensure that the scheduler request matches this number e.g.,:</p>
+<ul class="simple">
+<li><p>For 12 CPU workers, use <code class="docutils literal notranslate"><span class="pre">--num-workers</span> <span class="pre">12</span></code> and <code class="docutils literal notranslate"><span class="pre">#$</span> <span class="pre">-pe</span> <span class="pre">smp</span> <span class="pre">12</span></code>.</p></li>
+<li><p>For 2 GPU workers, use <code class="docutils literal notranslate"><span class="pre">--num-workers</span> <span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">#$</span> <span class="pre">-l</span> <span class="pre">coproc_v100=2</span></code>.</p>
+<ul>
+<li><p>To use GPUs, you will also need the <code class="docutils literal notranslate"><span class="pre">--use-gpu</span> <span class="pre">True</span></code> flag.</p></li>
+</ul>
+</li>
+</ul>
+<p>In this simple example using 12 CPUs, the job efficiency was (using <code class="docutils literal notranslate"><span class="pre">qacct</span> <span class="pre">-j</span> <span class="pre">&lt;JOBID&gt;</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Efficiency</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">cpu</span> <span class="o">/</span> <span class="p">(</span><span class="n">ru_wallclock</span> <span class="o">*</span> <span class="n">slots</span><span class="p">)</span>
+<span class="n">Efficiency</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="mi">10214</span> <span class="o">/</span> <span class="p">(</span><span class="mi">928</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">Efficiency</span> <span class="o">=</span> <span class="mi">92</span> <span class="o">%</span>
+</pre></div>
+</div>
+<p>92% is good.</p>
+</div>
+<div class="section" id="gpu-s">
+<h5>GPU(s)<a class="headerlink" href="#gpu-s" title="Permalink to this headline">¶</a></h5>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The tests below were for a <a class="reference external" href="https://arcdocs.leeds.ac.uk/usage/gpgpu.html#arc4">NVIDIA V100 with 32 GB of memory</a>.</p>
+</div>
+<p>An example job submission script is (also <a class="reference external" href="https://github.com/ARCTraining/swd8_intro_ml/blob/main/docs/distributed/distributed_ml_on_arc4_gpu.bash">here</a>):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bashnvidia-smi dmon -d 10 -s um -i 0 &gt; efficiency_log &amp;</span>
+
+<span class="c1"># run the GPU script</span>
+python tensorflow_ray_train_mnist_example.py --use-gpu True --num-workers <span class="m">1</span> --epochs <span class="m">100</span>
+
+<span class="c1"># stop the efficiency log</span>
+<span class="nb">kill</span> %1
+<span class="c1">#$ -cwd -V</span>
+<span class="c1">#$ -l h_rt=00:15:00</span>
+<span class="c1">#$ -l coproc_v100=1</span>
+
+<span class="c1"># activate conda and add to library path</span>
+conda activate swd8_intro_ml 
+<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LD_LIBRARY_PATH</span>:<span class="nv">$CONDA_PREFIX</span>/lib
+
+<span class="c1"># start the efficiency log for the GPU</span>
+nvidia-smi dmon -d <span class="m">10</span> -s um -i <span class="m">0</span> &gt; efficiency_log <span class="p">&amp;</span>
+
+<span class="c1"># run the GPU script</span>
+python tensorflow_ray_train_mnist_example.py --use-gpu True --num-workers <span class="m">1</span> --epochs <span class="m">100</span>
+
+<span class="c1"># stop the efficiency log</span>
+<span class="nb">kill</span> %1
+</pre></div>
+</div>
+<p>You can check the efficiency of your GPU job using the <a class="reference external" href="https://developer.nvidia.com/nvidia-system-management-interface">NVIDIA System Management Interface</a> i.e., <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dmon</span></code> is for device monitoring.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-d</span> <span class="pre">X</span></code> records the metrics every X seconds.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-s</span> <span class="pre">um</span></code> is the metrics to sample, where u = utilisation and m = memory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-i</span> <span class="pre">0</span></code> is the device number, where 0 = first gpu. For multiple devices, add them separated by commas e.g., <code class="docutils literal notranslate"><span class="pre">-i</span> <span class="pre">0,1</span></code>.</p></li>
+</ul>
+<p>Then you can view the results from the <code class="docutils literal notranslate"><span class="pre">efficiency_log</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># gpu    sm   mem   enc   dec    fb  bar1</span>
+<span class="c1"># Idx     %     %     %     %    MB    MB</span>
+    <span class="m">0</span>     <span class="m">0</span>     <span class="m">0</span>     <span class="m">0</span>     <span class="m">0</span>     <span class="m">0</span>     <span class="m">2</span>
+    <span class="m">0</span>     <span class="m">0</span>     <span class="m">0</span>     <span class="m">0</span>     <span class="m">0</span>     <span class="m">0</span>     <span class="m">2</span>
+    <span class="m">0</span>     <span class="m">0</span>     <span class="m">0</span>     <span class="m">0</span>     <span class="m">0</span> <span class="m">31880</span>     <span class="m">5</span>
+    <span class="m">0</span>    <span class="m">34</span>    <span class="m">15</span>     <span class="m">0</span>     <span class="m">0</span> <span class="m">31932</span>     <span class="m">5</span>
+</pre></div>
+</div>
+<p>The main columns are <code class="docutils literal notranslate"><span class="pre">sm</span></code> (for utilisation %) and <code class="docutils literal notranslate"><span class="pre">mem</span></code> (for memory %).</p>
+<p>Here, the job utilised approximately 35% of the GPU and 15% of its memory. (The first few rows are blank as the GPU was idle while the CPU downloaded the data.)</p>
+<p>That’s quite low, though this was for a simple MNIST example.</p>
+<p>A more complex problem will likely utilise the GPU better.</p>
+</div>
+</div>
+</div>
+<div class="section" id="example-tensorflow-keras-transfer-learning">
+<h3>Example: <a class="reference internal" href="04_models.html#tf-transfer-learning"><span class="std std-ref">TensorFlow (Keras) transfer learning</span></a><a class="headerlink" href="#example-tensorflow-keras-transfer-learning" title="Permalink to this headline">¶</a></h3>
+<p>In lesson 4, we looked at a TensorFlow (Keras) transfer learning example. To use this script with Ray Train, you primarily need to create the dataset pipeline and model creation functions. You can use the examples here as a foundation. The full script for this example is <a class="reference external" href="https://github.com/ARCTraining/swd8_intro_ml/blob/main/docs/distributed/tensorflow_ray_train_transfer_learning_example.py">here</a>.</p>
+<p>Running this code on a single GPU utilised approximately 90% of the GPU and 45% of its memory.</p>
+<p>This is good.</p>
+<p>Multiple GPUs is not needed here, though they could be requested by simply changing:</p>
+<ul class="simple">
+<li><p>Ray Train flag <code class="docutils literal notranslate"><span class="pre">--num-workers</span> <span class="pre">2</span></code></p></li>
+<li><p>Scheduler option <code class="docutils literal notranslate"><span class="pre">#$</span> <span class="pre">-l</span> <span class="pre">coproc_v100=2</span></code></p></li>
+<li><p>GPU monitoring <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span> <span class="pre">dmon</span> <span class="pre">-i</span> <span class="pre">0,1</span></code></p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To utilise GPU(s) efficiently, try to match the resources requested to what your problem requires e.g., the model of GPU, the memory it has, etc.</p>
+</div>
+</div>
+</div>
+<div class="section" id="pytorch-lightning">
+<h2><a class="reference external" href="https://pytorch-lightning.readthedocs.io/en/stable/clouds/cluster.html">PyTorch (Lightning)</a><a class="headerlink" href="#pytorch-lightning" title="Permalink to this headline">¶</a></h2>
+<p>PyTorch Lightning comes with great built-in functionality to scale to multiple GPUs.</p>
+<p>First though, we should check that the problem requires these resources.</p>
+<p>A <a class="reference external" href="https://github.com/ARCTraining/swd8_intro_ml/blob/main/docs/distributed/pytorch_lightning_mnist_example.py">simple example for MNIST</a> utilises about 8% of a single V100 GPU.</p>
+<p>The <a class="reference internal" href="04_models.html#torch-transfer-learning"><span class="std std-ref">PyTorch Lightning transfer learning example</span></a> (lesson 4) utilises about 15% of a single V100 GPU (full script <a class="reference external" href="https://github.com/ARCTraining/swd8_intro_ml/blob/main/docs/distributed/pytorch_lightning_transfer_learning_example.py">here</a>).</p>
+<p>To demonstrate running this transfer learning example over multiple GPUs, we could unfreeze the pre-trained model to increase the workload.</p>
+<p>To unfreeze the pre-trained model:</p>
+<ul class="simple">
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">trainer.finetune(strategy=&quot;unfreeze&quot;)</span></code>.</p></li>
+<li><p>This is also the default setting.</p></li>
+</ul>
+<p>Then the steps to run over multiple GPUs are:</p>
+<ol>
+<li><p>Specify the <a class="reference external" href="https://pytorch-lightning.readthedocs.io/en/stable/advanced/model_parallel.html#ddp-optimizations">data parallel strategy</a> in the Trainer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pytorch_lightning.strategies</span> <span class="kn">import</span> <span class="n">DDPStrategy</span>
+
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">flash</span><span class="o">.</span><span class="n">Trainer</span><span class="p">(</span>
+    <span class="n">max_epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">accelerator</span><span class="o">=</span><span class="s2">&quot;gpu&quot;</span><span class="p">,</span>
+    <span class="n">devices</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">device_count</span><span class="p">(),</span>
+    <span class="n">strategy</span><span class="o">=</span><span class="n">DDPStrategy</span><span class="p">(</span><span class="n">find_unused_parameters</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Note, setting <code class="docutils literal notranslate"><span class="pre">find_unused_parameters=False</span></code> <a class="reference external" href="https://pytorch.org/docs/stable/notes/ddp.html#internal-design">can improve performance</a>.</p></li>
+</ul>
+</li>
+<li><p>Set the scheduler to use multiple GPUs:</p>
+<ul class="simple">
+<li><p>e.g., <code class="docutils literal notranslate"><span class="pre">#$</span> <span class="pre">-l</span> <span class="pre">coproc_v100=2</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Adding GPU monitoring for multiple GPUs</p>
+<ul class="simple">
+<li><p>e.g., <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span> <span class="pre">dmon</span> <span class="pre">-i</span> <span class="pre">0,1</span></code>.</p></li>
+</ul>
+</li>
+</ol>
+<p>This utilised 2 V100 GPUs at approximately 40%. This isn’t great, though it demonstrates the ease of distributed training with PyTorch Lightning.</p>
+</div>
+<div class="section" id="jupyter-notebook-to-hpc">
+<h2>Jupyter Notebook to HPC<a class="headerlink" href="#jupyter-notebook-to-hpc" title="Permalink to this headline">¶</a></h2>
+<p>Once you’ve finished testing out different ideas locally in a Jupyter Notebook, you can then convert this to an exercutable script to run on a HPC.</p>
+<p>This is because the HPCs (currently accessible at Leeds, at least) are suitable for non-interactive batch jobs.</p>
+<p>The steps are to:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#clean-nonessential-code"><span class="std std-ref">Clean non-essential code</span></a></p></li>
+<li><p><a class="reference internal" href="#refactor-into-functions"><span class="std std-ref">Refactor Jupyter Notebook code into functions</span></a></p></li>
+<li><p><a class="reference internal" href="#create-python-script"><span class="std std-ref">Create a Python script</span></a></p></li>
+<li><p><a class="reference internal" href="#create-submission-script"><span class="std std-ref">Create submission script</span></a></p></li>
+<li><p><a class="reference internal" href="#create-unit-tests"><span class="std std-ref">(Optional) Create unit tests</span></a></p></li>
+</ul>
+<div class="section" id="clean-non-essential-code">
+<span id="clean-nonessential-code"></span><h3>Clean non-essential code<a class="headerlink" href="#clean-non-essential-code" title="Permalink to this headline">¶</a></h3>
+<p>Some code added during the experimentation phase was only needed to test out ideas and explore the data.</p>
+<p>This non-essential code can be removed to make it more maintainable and performant.</p>
+<p>Let’s use the example from the <a class="reference internal" href="03_data.html#id24"><span class="std std-ref">TensorFlow Datasets MNIST example</span></a> we saw in Lesson 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">tensorflow_datasets</span> <span class="k">as</span> <span class="nn">tfds</span>
+
+<span class="c1"># global setup</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">set_random_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Num GPUs Available: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s2">&quot;GPU&quot;</span><span class="p">)))</span>
+<span class="n">AUTOTUNE</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">AUTOTUNE</span>
+<span class="n">NUM_EPOCHS</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># download the data</span>
+<span class="p">(</span><span class="n">ds_train</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">,</span> <span class="n">ds_test</span><span class="p">),</span> <span class="n">ds_info</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
+    <span class="s2">&quot;mnist&quot;</span><span class="p">,</span>
+    <span class="n">split</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;train[:80%]&quot;</span><span class="p">,</span> <span class="s2">&quot;train[80%:90%]&quot;</span><span class="p">,</span> <span class="s2">&quot;train[90%:]&quot;</span><span class="p">],</span>
+    <span class="n">shuffle_files</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">as_supervised</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">with_info</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ds_train</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ds_info</span><span class="p">)</span>
+
+<span class="c1"># preprocess the data</span>
+<span class="k">def</span> <span class="nf">normalise_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="n">label</span>
+
+
+<span class="c1"># create data pipelines</span>
+<span class="k">def</span> <span class="nf">training_pipeline</span><span class="p">(</span><span class="n">ds_train</span><span class="p">):</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">normalise_image</span><span class="p">,</span> <span class="n">num_parallel_calls</span><span class="o">=</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">ds_info</span><span class="o">.</span><span class="n">splits</span><span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">num_examples</span><span class="p">)</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ds_train</span>
+
+
+<span class="k">def</span> <span class="nf">test_pipeline</span><span class="p">(</span><span class="n">ds_test</span><span class="p">):</span>
+    <span class="n">ds_test</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">normalise_image</span><span class="p">,</span> <span class="n">num_parallel_calls</span><span class="o">=</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+    <span class="n">ds_test</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
+    <span class="n">ds_test</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+    <span class="n">ds_test</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ds_test</span>
+
+
+<span class="n">ds_train</span> <span class="o">=</span> <span class="n">training_pipeline</span><span class="p">(</span><span class="n">ds_train</span><span class="p">)</span>
+<span class="n">ds_val</span> <span class="o">=</span> <span class="n">training_pipeline</span><span class="p">(</span><span class="n">ds_val</span><span class="p">)</span>
+<span class="n">ds_test</span> <span class="o">=</span> <span class="n">test_pipeline</span><span class="p">(</span><span class="n">ds_test</span><span class="p">)</span>
+
+
+<span class="c1"># create the model</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;inputs&quot;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;flatten&quot;</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;layer1&quot;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;layer2&quot;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">outputs</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;outputs&quot;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;functional&quot;</span><span class="p">)</span>
+
+<span class="c1"># view the model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+
+<span class="c1"># compile the model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+    <span class="n">optimizer</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">Adam</span><span class="p">(),</span>
+    <span class="n">loss</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">SparseCategoricalCrossentropy</span><span class="p">(</span><span class="n">from_logits</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">SparseCategoricalAccuracy</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;accuracy&quot;</span><span class="p">)],</span>
+<span class="p">)</span>
+
+<span class="c1"># train the model</span>
+<span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+    <span class="n">ds_train</span><span class="p">,</span>
+    <span class="n">validation_data</span><span class="o">=</span><span class="n">ds_val</span><span class="p">,</span>
+    <span class="n">epochs</span><span class="o">=</span><span class="n">NUM_EPOCHS</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># plot the model accuracy</span>
+<span class="n">epochs_range</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">NUM_EPOCHS</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epochs_range</span><span class="p">,</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">],</span> <span class="s2">&quot;bo&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Training accuracy&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">epochs_range</span><span class="p">,</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s2">&quot;val_accuracy&quot;</span><span class="p">],</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Validation accuracy&quot;</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Training and validation accuracy&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Epochs&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Accuracy&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># save the model</span>
+<span class="n">path_models</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="si">}</span><span class="s2">/models&quot;</span>
+<span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path_models</span><span class="si">}</span><span class="s2">/model_tf_mnist&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Num GPUs Available:  0
+&lt;_OptionsDataset element_spec=(TensorSpec(shape=(28, 28, 1), dtype=tf.uint8, name=None), TensorSpec(shape=(), dtype=tf.int64, name=None))&gt;
+tfds.core.DatasetInfo(
+    name=&#39;mnist&#39;,
+    full_name=&#39;mnist/3.0.1&#39;,
+    description=&quot;&quot;&quot;
+    The MNIST database of handwritten digits.
+    &quot;&quot;&quot;,
+    homepage=&#39;http://yann.lecun.com/exdb/mnist/&#39;,
+    data_path=&#39;/home/runner/tensorflow_datasets/mnist/3.0.1&#39;,
+    download_size=11.06 MiB,
+    dataset_size=21.00 MiB,
+    features=FeaturesDict({
+        &#39;image&#39;: Image(shape=(28, 28, 1), dtype=tf.uint8),
+        &#39;label&#39;: ClassLabel(shape=(), dtype=tf.int64, num_classes=10),
+    }),
+    supervised_keys=(&#39;image&#39;, &#39;label&#39;),
+    disable_shuffling=False,
+    splits={
+        &#39;test&#39;: &lt;SplitInfo num_examples=10000, num_shards=1&gt;,
+        &#39;train&#39;: &lt;SplitInfo num_examples=60000, num_shards=1&gt;,
+    },
+    citation=&quot;&quot;&quot;@article{lecun2010mnist,
+      title={MNIST handwritten digit database},
+      author={LeCun, Yann and Cortes, Corinna and Burges, CJ},
+      journal={ATT Labs [Online]. Available: http://yann.lecun.com/exdb/mnist},
+      volume={2},
+      year={2010}
+    }&quot;&quot;&quot;,
+)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model: &quot;functional&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_________________________________________________________________
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Layer (type)                Output Shape              Param #   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=================================================================
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> inputs (InputLayer)         [(None, 28, 28, 1)]       0         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> flatten (Flatten)           (None, 784)               0         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> layer1 (Dense)              (None, 128)               100480    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> dropout (Dropout)           (None, 128)               0         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> layer2 (Dense)              (None, 128)               16512     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> outputs (Dense)             (None, 10)                1290      
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=================================================================
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total params: 118,282
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Trainable params: 118,282
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Non-trainable params: 0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_________________________________________________________________
+</pre></div>
+</div>
+<img alt="_images/05_distributed_45_22.png" src="_images/05_distributed_45_22.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-04-20 14:11:45.825244: W tensorflow/python/util/util.cc:368] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Assets written to: /home/runner/work/swd8_intro_ml/swd8_intro_ml/docs/models/model_tf_mnist/assets
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Assets written to: /home/runner/work/swd8_intro_ml/swd8_intro_ml/docs/models/model_tf_mnist/assets
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, removing non-essential code, now the experimentation phase is complete.</p>
+<p>Here this included:</p>
+<ul class="simple">
+<li><p>Removing downloading data information.</p></li>
+<li><p>Removing unrequired print statements.</p></li>
+<li><p>Viewing model summary.</p></li>
+<li><p>Removing/replacing plots with text output.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">tensorflow_datasets</span> <span class="k">as</span> <span class="nn">tfds</span>
+
+<span class="c1"># global setup</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">set_random_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Num GPUs Available: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s2">&quot;GPU&quot;</span><span class="p">)))</span>
+<span class="n">AUTOTUNE</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">AUTOTUNE</span>
+<span class="n">NUM_EPOCHS</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># download the data</span>
+<span class="p">(</span><span class="n">ds_train</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">,</span> <span class="n">ds_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
+    <span class="s2">&quot;mnist&quot;</span><span class="p">,</span>
+    <span class="n">split</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;train[:80%]&quot;</span><span class="p">,</span> <span class="s2">&quot;train[80%:90%]&quot;</span><span class="p">,</span> <span class="s2">&quot;train[90%:]&quot;</span><span class="p">],</span>
+    <span class="n">shuffle_files</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">as_supervised</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">with_info</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># preprocess the data</span>
+<span class="k">def</span> <span class="nf">normalise_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="n">label</span>
+
+
+<span class="c1"># create data pipelines</span>
+<span class="k">def</span> <span class="nf">training_pipeline</span><span class="p">(</span><span class="n">ds_train</span><span class="p">):</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">normalise_image</span><span class="p">,</span> <span class="n">num_parallel_calls</span><span class="o">=</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">ds_info</span><span class="o">.</span><span class="n">splits</span><span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">num_examples</span><span class="p">)</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ds_train</span>
+
+
+<span class="k">def</span> <span class="nf">test_pipeline</span><span class="p">(</span><span class="n">ds_test</span><span class="p">):</span>
+    <span class="n">ds_test</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">normalise_image</span><span class="p">,</span> <span class="n">num_parallel_calls</span><span class="o">=</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+    <span class="n">ds_test</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
+    <span class="n">ds_test</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+    <span class="n">ds_test</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ds_test</span>
+
+
+<span class="n">ds_train</span> <span class="o">=</span> <span class="n">training_pipeline</span><span class="p">(</span><span class="n">ds_train</span><span class="p">)</span>
+<span class="n">ds_val</span> <span class="o">=</span> <span class="n">training_pipeline</span><span class="p">(</span><span class="n">ds_val</span><span class="p">)</span>
+<span class="n">ds_test</span> <span class="o">=</span> <span class="n">test_pipeline</span><span class="p">(</span><span class="n">ds_test</span><span class="p">)</span>
+
+
+<span class="c1"># create the model</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;inputs&quot;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;flatten&quot;</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;layer1&quot;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;layer2&quot;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">outputs</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;outputs&quot;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;functional&quot;</span><span class="p">)</span>
+
+<span class="c1"># compile the model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+    <span class="n">optimizer</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">Adam</span><span class="p">(),</span>
+    <span class="n">loss</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">SparseCategoricalCrossentropy</span><span class="p">(</span><span class="n">from_logits</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">SparseCategoricalAccuracy</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;accuracy&quot;</span><span class="p">)],</span>
+<span class="p">)</span>
+
+<span class="c1"># train the model</span>
+<span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+    <span class="n">ds_train</span><span class="p">,</span>
+    <span class="n">validation_data</span><span class="o">=</span><span class="n">ds_val</span><span class="p">,</span>
+    <span class="n">epochs</span><span class="o">=</span><span class="n">NUM_EPOCHS</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># view the model accuracy</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Training accuracy: </span><span class="si">{</span><span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">]]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Validation accuracy: </span><span class="si">{</span><span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_accuracy&#39;</span><span class="p">]]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># save the model</span>
+<span class="n">path_models</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="si">}</span><span class="s2">/models&quot;</span>
+<span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path_models</span><span class="si">}</span><span class="s2">/model_tf_mnist&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Num GPUs Available:  0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training accuracy: [0.88, 0.95, 0.96, 0.97, 0.97]
+Validation accuracy: [0.94, 0.96, 0.97, 0.97, 0.97]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Assets written to: /home/runner/work/swd8_intro_ml/swd8_intro_ml/docs/models/model_tf_mnist/assets
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Assets written to: /home/runner/work/swd8_intro_ml/swd8_intro_ml/docs/models/model_tf_mnist/assets
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="refactor-jupyter-notebook-code-into-functions">
+<span id="refactor-into-functions"></span><h3>Refactor Jupyter Notebook code into functions<a class="headerlink" href="#refactor-jupyter-notebook-code-into-functions" title="Permalink to this headline">¶</a></h3>
+<p>Now, any code that is not already in functions, can be refactored into functions.</p>
+<p>Modularising the code like this helps with diagnosing errors and creating tests.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">tensorflow_datasets</span> <span class="k">as</span> <span class="nn">tfds</span>
+
+<span class="c1"># global setup</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">set_random_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Num GPUs Available: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s2">&quot;GPU&quot;</span><span class="p">)))</span>
+<span class="n">AUTOTUNE</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">AUTOTUNE</span>
+<span class="n">NUM_EPOCHS</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># download the data</span>
+<span class="k">def</span> <span class="nf">download_data</span><span class="p">():</span>
+    <span class="p">(</span><span class="n">ds_train</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">,</span> <span class="n">ds_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
+        <span class="s2">&quot;mnist&quot;</span><span class="p">,</span>
+        <span class="n">split</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;train[:80%]&quot;</span><span class="p">,</span> <span class="s2">&quot;train[80%:90%]&quot;</span><span class="p">,</span> <span class="s2">&quot;train[90%:]&quot;</span><span class="p">],</span>
+        <span class="n">shuffle_files</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">as_supervised</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">with_info</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">ds_train</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">,</span> <span class="n">ds_test</span>
+
+
+<span class="c1"># preprocess the data</span>
+<span class="k">def</span> <span class="nf">normalise_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="n">label</span>
+
+
+<span class="c1"># create data pipelines</span>
+<span class="k">def</span> <span class="nf">training_pipeline</span><span class="p">(</span><span class="n">ds_train</span><span class="p">):</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">normalise_image</span><span class="p">,</span> <span class="n">num_parallel_calls</span><span class="o">=</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">ds_info</span><span class="o">.</span><span class="n">splits</span><span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">num_examples</span><span class="p">)</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ds_train</span>
+
+
+<span class="k">def</span> <span class="nf">test_pipeline</span><span class="p">(</span><span class="n">ds_test</span><span class="p">):</span>
+    <span class="n">ds_test</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">normalise_image</span><span class="p">,</span> <span class="n">num_parallel_calls</span><span class="o">=</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+    <span class="n">ds_test</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
+    <span class="n">ds_test</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+    <span class="n">ds_test</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ds_test</span>
+
+
+<span class="c1"># create and compile the model</span>
+<span class="k">def</span> <span class="nf">create_and_compile_model</span><span class="p">():</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;inputs&quot;</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;flatten&quot;</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;layer1&quot;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;layer2&quot;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;outputs&quot;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;functional&quot;</span><span class="p">)</span>
+
+    <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+        <span class="n">optimizer</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">Adam</span><span class="p">(),</span>
+        <span class="n">loss</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">SparseCategoricalCrossentropy</span><span class="p">(</span><span class="n">from_logits</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">SparseCategoricalAccuracy</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;accuracy&quot;</span><span class="p">)],</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">model</span>
+
+
+<span class="c1"># train the model</span>
+<span class="k">def</span> <span class="nf">train_model</span><span class="p">():</span>
+    <span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+        <span class="n">ds_train</span><span class="p">,</span>
+        <span class="n">validation_data</span><span class="o">=</span><span class="n">ds_val</span><span class="p">,</span>
+        <span class="n">epochs</span><span class="o">=</span><span class="n">NUM_EPOCHS</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">history</span>
+
+
+<span class="c1"># save the model</span>
+<span class="k">def</span> <span class="nf">save_model</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+    <span class="n">path_models</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="si">}</span><span class="s2">/models&quot;</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path_models</span><span class="si">}</span><span class="s2">/model_tf_mnist&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># combine the functions in a call to main</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">ds_train</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">,</span> <span class="n">ds_test</span> <span class="o">=</span> <span class="n">download_data</span><span class="p">()</span>
+
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">training_pipeline</span><span class="p">(</span><span class="n">ds_train</span><span class="p">)</span>
+    <span class="n">ds_val</span> <span class="o">=</span> <span class="n">training_pipeline</span><span class="p">(</span><span class="n">ds_val</span><span class="p">)</span>
+    <span class="n">ds_test</span> <span class="o">=</span> <span class="n">test_pipeline</span><span class="p">(</span><span class="n">ds_test</span><span class="p">)</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">create_and_compile_model</span><span class="p">()</span>
+    <span class="n">history</span> <span class="o">=</span> <span class="n">train_model</span><span class="p">()</span>
+    <span class="n">save_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+
+
+<span class="c1"># run the functions</span>
+<span class="n">main</span><span class="p">()</span>
+
+<span class="c1"># view the model accuracy</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Training accuracy: </span><span class="si">{</span><span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">]]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Validation accuracy: </span><span class="si">{</span><span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_accuracy&#39;</span><span class="p">]]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Num GPUs Available:  0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Assets written to: /home/runner/work/swd8_intro_ml/swd8_intro_ml/docs/models/model_tf_mnist/assets
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Assets written to: /home/runner/work/swd8_intro_ml/swd8_intro_ml/docs/models/model_tf_mnist/assets
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training accuracy: [0.88, 0.95, 0.96, 0.97, 0.97]
+Validation accuracy: [0.94, 0.96, 0.97, 0.97, 0.97]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-a-python-script">
+<span id="create-python-script"></span><h3>Create a Python script<a class="headerlink" href="#create-a-python-script" title="Permalink to this headline">¶</a></h3>
+<p>First, the call to <code class="docutils literal notranslate"><span class="pre">main()</span></code> should be placed inside a conditional invocation i.e.,:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Now, the script can be called from a terminal by running <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">script.py</span></code>.</p>
+<p>Then, the rest of the code can be convert by either:</p>
+<div class="section" id="option-1-recommended">
+<h4>Option 1 (recommended)<a class="headerlink" href="#option-1-recommended" title="Permalink to this headline">¶</a></h4>
+<p>Convert a <em>single cell</em> to a script using the <code class="docutils literal notranslate"><span class="pre">%%writefile</span></code> IPython magic command.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> jupyter-to-hpc_tf-mnist-example.py
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">tensorflow_datasets</span> <span class="k">as</span> <span class="nn">tfds</span>
+
+<span class="c1"># global setup</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">set_random_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Num GPUs Available: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s2">&quot;GPU&quot;</span><span class="p">)))</span>
+<span class="n">AUTOTUNE</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">AUTOTUNE</span>
+<span class="n">NUM_EPOCHS</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># download the data</span>
+<span class="k">def</span> <span class="nf">download_data</span><span class="p">():</span>
+    <span class="p">(</span><span class="n">ds_train</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">,</span> <span class="n">ds_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
+        <span class="s2">&quot;mnist&quot;</span><span class="p">,</span>
+        <span class="n">split</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;train[:80%]&quot;</span><span class="p">,</span> <span class="s2">&quot;train[80%:90%]&quot;</span><span class="p">,</span> <span class="s2">&quot;train[90%:]&quot;</span><span class="p">],</span>
+        <span class="n">shuffle_files</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">as_supervised</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">with_info</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">ds_train</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">,</span> <span class="n">ds_test</span>
+
+
+<span class="c1"># preprocess the data</span>
+<span class="k">def</span> <span class="nf">normalise_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="n">label</span>
+
+
+<span class="c1"># create data pipelines</span>
+<span class="k">def</span> <span class="nf">training_pipeline</span><span class="p">(</span><span class="n">ds_train</span><span class="p">):</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">normalise_image</span><span class="p">,</span> <span class="n">num_parallel_calls</span><span class="o">=</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">ds_info</span><span class="o">.</span><span class="n">splits</span><span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">num_examples</span><span class="p">)</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ds_train</span>
+
+
+<span class="k">def</span> <span class="nf">test_pipeline</span><span class="p">(</span><span class="n">ds_test</span><span class="p">):</span>
+    <span class="n">ds_test</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">normalise_image</span><span class="p">,</span> <span class="n">num_parallel_calls</span><span class="o">=</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+    <span class="n">ds_test</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
+    <span class="n">ds_test</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+    <span class="n">ds_test</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ds_test</span>
+
+
+<span class="c1"># create and compile the model</span>
+<span class="k">def</span> <span class="nf">create_and_compile_model</span><span class="p">():</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;inputs&quot;</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;flatten&quot;</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;layer1&quot;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;layer2&quot;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;outputs&quot;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;functional&quot;</span><span class="p">)</span>
+
+    <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+        <span class="n">optimizer</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">Adam</span><span class="p">(),</span>
+        <span class="n">loss</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">SparseCategoricalCrossentropy</span><span class="p">(</span><span class="n">from_logits</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">SparseCategoricalAccuracy</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;accuracy&quot;</span><span class="p">)],</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">model</span>
+
+
+<span class="c1"># train the model</span>
+<span class="k">def</span> <span class="nf">train_model</span><span class="p">():</span>
+    <span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+        <span class="n">ds_train</span><span class="p">,</span>
+        <span class="n">validation_data</span><span class="o">=</span><span class="n">ds_val</span><span class="p">,</span>
+        <span class="n">epochs</span><span class="o">=</span><span class="n">NUM_EPOCHS</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">history</span>
+
+
+<span class="c1"># save the model</span>
+<span class="k">def</span> <span class="nf">save_model</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+    <span class="n">path_models</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="si">}</span><span class="s2">/models&quot;</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path_models</span><span class="si">}</span><span class="s2">/model_tf_mnist&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># combine the functions in a call to main</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">ds_train</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">,</span> <span class="n">ds_test</span> <span class="o">=</span> <span class="n">download_data</span><span class="p">()</span>
+
+    <span class="n">ds_train</span> <span class="o">=</span> <span class="n">training_pipeline</span><span class="p">(</span><span class="n">ds_train</span><span class="p">)</span>
+    <span class="n">ds_val</span> <span class="o">=</span> <span class="n">training_pipeline</span><span class="p">(</span><span class="n">ds_val</span><span class="p">)</span>
+    <span class="n">ds_test</span> <span class="o">=</span> <span class="n">test_pipeline</span><span class="p">(</span><span class="n">ds_test</span><span class="p">)</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">create_and_compile_model</span><span class="p">()</span>
+    <span class="n">history</span> <span class="o">=</span> <span class="n">train_model</span><span class="p">()</span>
+    <span class="n">save_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># run the functions</span>
+    <span class="n">main</span><span class="p">()</span>
+
+    <span class="c1"># view the model accuracy</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Training accuracy: </span><span class="si">{</span><span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">]]</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Validation accuracy: </span><span class="si">{</span><span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_accuracy&#39;</span><span class="p">]]</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting jupyter-to-hpc_tf-mnist-example.py
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="option-2">
+<h4>Option 2<a class="headerlink" href="#option-2" title="Permalink to this headline">¶</a></h4>
+<p>Convert the <em>entire</em> notebook to a script using the <code class="docutils literal notranslate"><span class="pre">nbconvert</span></code> package:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter nbconvert <span class="s2">&quot;my_notebook.ipynb&quot;</span> --to script
+</pre></div>
+</div>
+</div>
+<div class="section" id="option-3">
+<h4>Option 3<a class="headerlink" href="#option-3" title="Permalink to this headline">¶</a></h4>
+<p>Convert the <em>entire</em> notebook to a script using the Jupyter menu.</p>
+<p>From within the Jupyter Notebook, click <code class="docutils literal notranslate"><span class="pre">File</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">Export</span> <span class="pre">Notebook</span> <span class="pre">As</span> <span class="pre">...</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Executable</span> <span class="pre">Script</span></code>.</p>
+<p>This should convert the Jupyter Notebook to a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file, and download it locally.</p>
+</div>
+</div>
+<div class="section" id="create-submission-script">
+<span id="id1"></span><h3>Create submission script<a class="headerlink" href="#create-submission-script" title="Permalink to this headline">¶</a></h3>
+<p>For your HPC (e.g., ARC4), create the submission script.</p>
+<p>For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#$ -cwd</span>
+<span class="c1">#$ -l h_rt=00:05:00</span>
+<span class="c1">#$ -l coproc_v100=1</span>
+
+conda activate swd8_intro_ml 
+<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LD_LIBRARY_PATH</span>:<span class="nv">$CONDA_PREFIX</span>/lib  <span class="c1"># (sometimes required)</span>
+
+python jupyter-to-hpc_tf-mnist-example.py
+</pre></div>
+</div>
+<p>Ensure both of these files are on the HPC, alongside the corresponding conda environment.</p>
+</div>
+<div class="section" id="optional-create-unit-tests">
+<span id="create-unit-tests"></span><h3>(Optional) Create unit tests<a class="headerlink" href="#optional-create-unit-tests" title="Permalink to this headline">¶</a></h3>
+<p>It’s good practise to write <a class="reference external" href="https://the-turing-way.netlify.app/reproducible-research/testing.html">tests</a> for your code.</p>
+<p><a class="reference external" href="https://docs.pytest.org/en/6.2.x/">pytest</a> are <a class="reference external" href="https://numpy.org/doc/stable/reference/testing.html">NumPy</a> are both good, commonly-used tools for testing in Python.</p>
+<p>There are various <a class="reference external" href="https://softwaretestingfundamentals.com/">levels, types, and methods</a> of testing.</p>
+<p>For example, you could <a class="reference external" href="https://softwaretestingfundamentals.com/unit-testing/">unit test</a> individual functions, like the downloading and splitting of data:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">test_split_data</span><span class="p">(</span><span class="n">ds_train</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">,</span> <span class="n">ds_test</span><span class="p">):</span>
+    <span class="n">num_samples_train</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ds_train</span><span class="p">)</span>
+    <span class="n">num_samples_val</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ds_val</span><span class="p">)</span>
+    <span class="n">num_samples_test</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ds_test</span><span class="p">)</span>
+    
+    <span class="n">num_samples</span> <span class="o">=</span> <span class="n">num_samples_train</span> <span class="o">+</span> <span class="n">num_samples_val</span> <span class="o">+</span> <span class="n">num_samples_test</span>
+    
+    <span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">num_samples_train</span> <span class="o">/</span> <span class="n">num_samples</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">num_samples_val</span> <span class="o">/</span> <span class="n">num_samples</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">num_samples_test</span> <span class="o">/</span> <span class="n">num_samples</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    
+
+<span class="n">test_split_data</span><span class="p">(</span><span class="n">ds_train</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">,</span> <span class="n">ds_test</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You could also perform <a class="reference external" href="https://softwaretestingfundamentals.com/system-testing/">system testing</a>. For example, checking the final validation accuracy is above a threshold:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_final_val_accuracy_above_threshold</span><span class="p">(</span><span class="n">threshold</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_accuracy&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">threshold</span>
+    
+<span class="n">test_final_val_accuracy_above_threshold</span><span class="p">(</span><span class="mf">0.96</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question-1 admonition">
+<p class="admonition-title">Question 1</p>
+<p>What are the two ways to parallelise machine learning, and which way is simpler?</p>
+</div>
+<div class="admonition-question-2 admonition">
+<p class="admonition-title">Question 2</p>
+<p>How can you check the efficiency of a CPU job?</p>
+</div>
+<div class="admonition-question-3 admonition">
+<p class="admonition-title">Question 3</p>
+<p>How can you check the efficiency of a CPU job?</p>
+</div>
+<div class="admonition-question-4 admonition">
+<p class="admonition-title">Question 4</p>
+<p>What tools can help distribute TensorFlow and PyTorch code?</p>
+</div>
+<div class="admonition-question-5 admonition">
+<p class="admonition-title">Question 5</p>
+<p>In general, what should the batch size be for distributed work?</p>
+</div>
+<div class="admonition-question-6 admonition">
+<p class="admonition-title">Question 6</p>
+<p>What are some good steps for moving Jupyter Notebook code to HPC?</p>
+</div>
+</div>
+<div class="section" id="solutions">
+<h2><a class="reference internal" href="06_solutions.html#distributed"><span class="std std-ref">Solutions</span></a><a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="key-points">
+<h2>Key Points<a class="headerlink" href="#key-points" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>Ensure that you really need to use distributed devices.</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>Check everything first works on a single device.</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>Use data parallelism (to split the data over multiple devices).</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>Take care when setting the global batch size.</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>Check the efficiency of your jobs to ensure utilising the requested resources.</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>When moving from Jupyter to HPC:</em></p>
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>Clean non-essential code.</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>Refactor Jupyter Notebook code into functions.</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>Create a Python script.</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>Create submission script.</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>Create unit tests.</em></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="further-information">
+<h2>Further information<a class="headerlink" href="#further-information" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="good-practices">
+<h3>Good practices<a class="headerlink" href="#good-practices" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Ensure works on a single workers first, <em>before</em> going distributed.</p></li>
+<li><p>Ensure that you need the overhead of distributing over multiple GPUs e.g., could you instead use 1 GPU and model checkpointing?</p></li>
+<li><p>Ensure that the problem is complex enough to use multiple GPUs efficiently.</p></li>
+<li><p>Batch the dataset with the global batch size e.g., for 8 devices each capable of a btach of 64 use the global batch size of 512 (= 8 * 64).</p></li>
+<li><p><a class="reference external" href="https://pytorch-lightning.readthedocs.io/en/latest/advanced/model_parallel.html">Distributed training on PyTorch Lightning</a></p></li>
+<li><p>Performance tips from <a class="reference external" href="https://pytorch.org/tutorials/recipes/recipes/tuning_guide.html">PyTorch</a></p></li>
+</ul>
+</div>
+<div class="section" id="other-options">
+<h3>Other options<a class="headerlink" href="#other-options" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://horovod.ai/">Horovod</a></p>
+<ul>
+<li><p>A library to make distributed deep learning fast and easy to use.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.deepspeed.ai/">DeepSpeed</a></p>
+<ul>
+<li><p>A deep learning optimization library that makes distributed training easy, efficient, and effective.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://fairscale.readthedocs.io/en/latest/">FairScale</a></p>
+<ul>
+<li><p>A PyTorch extension library for high performance and large scale training.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="resources">
+<h3>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pytorch.org/tutorials/beginner/dist_overview.html">PyTorch Distributed Overview</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/computing/parallelism.html">scikit-learn parallelism</a></p></li>
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-convert-ml-experiment-to-production">Convert ML experiment to production</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "swd8_intro_ml"
+        },
+        kernelOptions: {
+            kernelName: "swd8_intro_ml",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'swd8_intro_ml'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="04_models.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Models</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="06_solutions.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Solutions</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Luke Conibear<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

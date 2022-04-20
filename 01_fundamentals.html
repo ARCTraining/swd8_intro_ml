@@ -1,0 +1,1282 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentals &#8212; SWD8: Introduction to Machine Learning</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tools" href="02_tools.html" />
+    <link rel="prev" title="Overview" href="00_overview.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SWD8: Introduction to Machine Learning</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   SWD8: Introduction to Machine Learning
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="00_overview.html">
+   Overview
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Fundamentals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_tools.html">
+     Tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_data.html">
+     Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_models.html">
+     Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_distributed.html">
+     Distributed
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_solutions.html">
+     Solutions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_summary.html">
+   Summary
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/01_fundamentals.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ARCTraining/swd8_intro_ml"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ARCTraining/swd8_intro_ml/issues/new?title=Issue%20on%20page%20%2F01_fundamentals.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ARCTraining/swd8_intro_ml/main?urlpath=tree/docs/01_fundamentals.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-ideas">
+   Basic ideas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overview">
+     Overview
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methods">
+     Methods
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classic-machine-learning">
+     Classic Machine Learning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deep-learning-neural-networks">
+     Deep Learning (Neural Networks)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data">
+     Data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#logits-and-log-odds">
+       Logits and Log-odds
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supervised-and-unsupervised">
+     Supervised and Unsupervised
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classification-and-regression">
+     Classification and Regression
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training-validation-and-test-splits">
+     Training, validation, and test splits
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cross-validation">
+     Cross-validation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hyperparameters">
+     Hyperparameters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parameters">
+     Parameters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model">
+     Model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training">
+     Training
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#loss-function">
+       Loss Function
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#gradient-descent">
+       Gradient descent
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#optimiser">
+       Optimiser
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#metric">
+       Metric
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#error-analysis">
+     Error analysis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#underfit">
+     Underfit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overfit">
+     Overfit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solutions">
+   <span class="xref std std-ref">
+    Solutions
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-points">
+   Key Points
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-information">
+   Further information
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#good-practices">
+     Good practices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#caveats">
+     Caveats
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resources">
+     Resources
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#online-courses">
+     Online courses
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#machine-learning">
+       Machine learning
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deep-learning">
+       Deep learning
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Fundamentals</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-ideas">
+   Basic ideas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overview">
+     Overview
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methods">
+     Methods
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classic-machine-learning">
+     Classic Machine Learning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deep-learning-neural-networks">
+     Deep Learning (Neural Networks)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data">
+     Data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#logits-and-log-odds">
+       Logits and Log-odds
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supervised-and-unsupervised">
+     Supervised and Unsupervised
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classification-and-regression">
+     Classification and Regression
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training-validation-and-test-splits">
+     Training, validation, and test splits
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cross-validation">
+     Cross-validation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hyperparameters">
+     Hyperparameters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parameters">
+     Parameters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model">
+     Model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training">
+     Training
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#loss-function">
+       Loss Function
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#gradient-descent">
+       Gradient descent
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#optimiser">
+       Optimiser
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#metric">
+       Metric
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#error-analysis">
+     Error analysis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#underfit">
+     Underfit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overfit">
+     Overfit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solutions">
+   <span class="xref std std-ref">
+    Solutions
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-points">
+   Key Points
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-information">
+   Further information
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#good-practices">
+     Good practices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#caveats">
+     Caveats
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resources">
+     Resources
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#online-courses">
+     Online courses
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#machine-learning">
+       Machine learning
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deep-learning">
+       Deep learning
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="fundamentals">
+<h1>Fundamentals<a class="headerlink" href="#fundamentals" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basic-ideas">
+<h2>Basic ideas<a class="headerlink" href="#basic-ideas" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
+<p>Machine learning is a subset of Artificial Intelligence.</p>
+<p>It is a range of methods that learn associations from (training) data.</p>
+<p>It then uses these associations for new predictions (i.e., also known as <a class="reference external" href="https://developers.google.com/machine-learning/glossary/#inference">inference</a>).</p>
+<p>This ability to do this well is <a class="reference external" href="https://developers.google.com/machine-learning/glossary/#generalization">generalising</a>.</p>
+<p>These can be useful for a range of problems including:</p>
+<ul class="simple">
+<li><p>Prediction problems (e.g., pattern recognition).</p></li>
+<li><p>Problems that you cannot (or are difficult to) program (e.g., image recognition).</p></li>
+<li><p>Faster approximations to problems that you can program (e.g., spam classification).</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/ai_ml_dl.jpg" id="ai-ml-dl-jpg"><img alt="_images/ai_ml_dl.jpg" id="ai-ml-dl-jpg" src="_images/ai_ml_dl.jpg" style="height: 300px;" /></a>
+<p><em><a class="reference external" href="https://vas3k.com/blog/machine_learning/">Image source</a></em></p>
+</div>
+<div class="section" id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
+<p>Within machine learning, there are many different methods.</p>
+<p>We’ll focus on <em>classic machine learning</em> and <em>deep learning</em> in this course.</p>
+<a class="reference internal image-reference" href="_images/ml_types.jpg" id="ml-types-jpg"><img alt="_images/ml_types.jpg" id="ml-types-jpg" src="_images/ml_types.jpg" style="height: 300px;" /></a>
+<p><em><a class="reference external" href="https://vas3k.com/blog/machine_learning/">Image source</a></em></p>
+</div>
+<div class="section" id="classic-machine-learning">
+<h3>Classic Machine Learning<a class="headerlink" href="#classic-machine-learning" title="Permalink to this headline">¶</a></h3>
+<p>There are a wide variety of types. Some common ones are:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/kHwlB_j7Hkc">Linear Regression</a></p>
+<ul>
+<li><p>Predict a continuous number using a linear model i.e., fit a straight line.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://youtu.be/hjrYrynGWGA">Logistic Regression</a></p>
+<ul>
+<li><p>Predict a class of either 0 or 1 i.e., a binary classification problem.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://youtu.be/hDmNF9JG3lo">Clustering</a></p>
+<ul>
+<li><p>Predictions are based on their similarility to their neighbours.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://youtu.be/hCOIMkcsm_g">Support vector machines</a></p>
+<ul>
+<li><p>Predictions are based their position relative to a decision boundary.</p></li>
+<li><p>The decision boundary is found by focusing on the two hardest to classify examples and placing support vectors between them.</p></li>
+</ul>
+</li>
+<li><p>And many, many more.</p></li>
+</ul>
+</div>
+<div class="section" id="deep-learning-neural-networks">
+<h3>Deep Learning (Neural Networks)<a class="headerlink" href="#deep-learning-neural-networks" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://youtu.be/n1l-9lIMW7E">Neural networks</a> are models made of layers of neurons.</p>
+<p><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#neuron">Neurons</a> (also known as units or nodes) take in inputs and return an output by applying an activation function.</p>
+<p><a class="reference external" href="https://youtu.be/Xvg00QnyaIY">Activation functions</a> (also known as non-linearities) take a weighted sum of inputs from a previous layer, apply a non-linear function, and pass the output onto the next layer.</p>
+<p>Common activation functions are:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#rectified-linear-unit-relu">ReLU (Rectified Linear Unit)</a></p>
+<ul>
+<li><p>If input is negative, the output equals 0.</p></li>
+<li><p>If input is positive, the output equals the input.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#sigmoid-function">Sigmoid</a></p>
+<ul>
+<li><p>Converts <a class="reference internal" href="#logits-and-log-odds"><span class="std std-ref">log-odds</span></a> (we’ll see these later) into probabilities between 0 and 1.</p></li>
+<li><p>Used for binary classification.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#softmax">Softmax</a></p>
+<ul>
+<li><p>Sigmoid for multi-classification.</p></li>
+</ul>
+</li>
+</ul>
+<p>The neurons are connected in <a class="reference external" href="https://developers.google.com/machine-learning/glossary/#hidden-layer">many layers</a>.</p>
+<p>Each layer is an input-output transformation.</p>
+<p>All the layers together are the model.</p>
+<p>The hidden layers between the <a class="reference external" href="https://developers.google.com/machine-learning/glossary/#input-layer">input layer</a> and <a class="reference external" href="https://developers.google.com/machine-learning/glossary/#output-layer">output layer</a> are the depth of the model (hence, <em>deep</em> learning).</p>
+<p>A common layer is for all the neurons to be <a class="reference external" href="https://developers.google.com/machine-learning/glossary/#fully-connected-layer">fully connected</a> to each other (also known as a dense layer).</p>
+<p>The types of layers, how many there are, and how they are connected is the architecture of the neural network.</p>
+<p>There are a wide variety of types of neural networks. Some common ones are:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/3PyJA9AfwSk">Convolutional Neural Networks (CNN)</a></p>
+<ul>
+<li><p>A neural network that uses convolutional layers.</p></li>
+<li><p><a class="reference external" href="https://youtu.be/jPOAS7uCODQ">Convolutional layers</a> group operations to reduce the number of parameters learned.</p></li>
+<li><p>They’re useful for image recognition problems.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#recurrent-neural-network">Recurrent Neural Networks (RNN)</a></p>
+<ul>
+<li><p>For sequential data e.g., time-series, natural language.</p></li>
+<li><p>Loops over timesteps while maintaining information from previous timesteps.</p></li>
+</ul>
+</li>
+<li><p>And many, many more.</p></li>
+</ul>
+<p><a class="reference external" href="https://youtu.be/xflCLdJh0n0">Deep learning has been progressing</a> primarily due to scale (bigger datasets and bigger neural networks), investment, and attention (additional research).</p>
+</div>
+<div class="section" id="data">
+<span id="tensors"></span><h3><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#data-set-or-dataset">Data</a><a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
+<p>The data is a sample of the problem you’re studying.</p>
+<p>Data has inputs (also known as features) and outputs (also known as targets).</p>
+<ul class="simple">
+<li><p>The inputs are what you provide to the model.</p></li>
+<li><p>The outputs are what you’re trying to predict.</p></li>
+</ul>
+<p>The data is normally in the form of tensors.</p>
+<p><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#tensor">Tensors</a> are multi-dimensional arrays:</p>
+<ul class="simple">
+<li><p>Scalars are rank-0 tensors.</p></li>
+<li><p>Vectors are rank-1 tensors.</p></li>
+<li><p>Matrices are rank-2 tensors.</p></li>
+<li><p>3+ dimensional arrays are rank-3+ tensors.</p></li>
+</ul>
+<p><img alt="tensors.png" src="_images/tensors.png" /></p>
+<p><em><a class="reference external" href="https://medium.com/mlait/tensors-representation-of-data-in-neural-networks-bbe8a711b93b">Image source</a></em></p>
+<div class="section" id="logits-and-log-odds">
+<span id="id1"></span><h4>Logits and Log-odds<a class="headerlink" href="#logits-and-log-odds" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://developers.google.com/machine-learning/glossary#logits">Logits</a> are a vector of raw (non-normalised) predictions from a classification model. For multi-class classification, these are converted to (normalised) probabilities using a softmax function.</p>
+<p><a class="reference external" href="https://developers.google.com/machine-learning/glossary#log-odds">Log-odds</a> are the logarithm of the odds of an event. They’re the inverse of the sigmoid function.</p>
+</div>
+</div>
+<div class="section" id="supervised-and-unsupervised">
+<h3>Supervised and Unsupervised<a class="headerlink" href="#supervised-and-unsupervised" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#supervised-machine-learning">Supervised learning</a> is when you provide <a class="reference external" href="https://developers.google.com/machine-learning/glossary/#label">labelled</a> outputs to learn from.</p></li>
+<li><p><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#unsupervised-machine-learning">Unsupervised learning</a> when you don’t provide any labels.</p></li>
+</ul>
+<p>Below is an example of supervised learning (classify different coloured markers) and unsupervised learning (find clusters within data).</p>
+<p><img alt="supervised_vs_unsupervised.png" src="_images/supervised_vs_unsupervised.png" /></p>
+<p><em><a class="reference external" href="https://analystprep.com/study-notes/cfa-level-2/quantitative-method/supervised-machine-learning-unsupervised-machine-learning-deep-learning/">Image source</a></em></p>
+<p>We’ll focus on supervised learning in this course.</p>
+</div>
+<div class="section" id="classification-and-regression">
+<h3>Classification and Regression<a class="headerlink" href="#classification-and-regression" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#classification-model">Classification</a> problems are those that try to predict a <a class="reference external" href="https://developers.google.com/machine-learning/glossary/#categorical-data">discrete category</a>.</p>
+<ul>
+<li><p>i.e., binary: cat or dog, multi-class: dog breeds (poodle, greyhound, etc.).</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#regression-model">Regression</a> problems are those that try to predict a <a class="reference external" href="https://developers.google.com/machine-learning/glossary/#numerical-data">continuous number</a>.</p>
+<ul>
+<li><p>i.e., beans in a jar, house prices.</p></li>
+</ul>
+</li>
+</ul>
+<p>Below is an example of classification (separate blue circles from purple crosses) and regression (predict a numerical value from the data).</p>
+<p><img alt="classification_vs_regression.png" src="_images/classification_vs_regression.png" /></p>
+<p><em><a class="reference external" href="https://towardsdatascience.com/supervised-vs-unsupervised-learning-14f68e32ea8d">Image source</a></em></p>
+</div>
+<div class="section" id="training-validation-and-test-splits">
+<h3><a class="reference external" href="https://youtu.be/1waHlpKiNyY">Training, validation, and test splits</a><a class="headerlink" href="#training-validation-and-test-splits" title="Permalink to this headline">¶</a></h3>
+<p>The data is normally split into training, validation, and test sets.</p>
+<ul class="simple">
+<li><p>The <a class="reference external" href="https://developers.google.com/machine-learning/glossary/#training_set">training set</a> is for training the model.</p></li>
+<li><p>The <a class="reference external" href="https://developers.google.com/machine-learning/glossary/#validation_set">validation set</a> (optional) is for iteratively optimising the model during training.</p></li>
+<li><p>The <a class="reference external" href="https://developers.google.com/machine-learning/glossary/#test-set">test set</a> is <em>only</em> for testing the model at the end.</p>
+<ul>
+<li><p>This should remain untouched (i.e., <a class="reference external" href="https://developers.google.com/machine-learning/glossary/#holdout-data">held out</a> of training).</p></li>
+<li><p><em>Single-use</em> (to ensure representative of future data).</p></li>
+<li><p>Think of the this like the exam at the end of a course. You don’t want the students to just parrot back the teaching material. You’d like them to demonstrate understanding.</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="train-val-test-split.png" src="_images/train-val-test-split.png" /></p>
+<p><em><a class="reference external" href="https://stackoverflow.com/a/56100053/6250873">Image source</a></em></p>
+<p>The <a class="reference external" href="https://youtu.be/_Fe5kKmFieg">size of the split</a> depends on the size of the dataset and the signal you’re trying to predict (i.e., the smaller the signal, then the larger the test set needs to be).</p>
+<p>For example:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data set size</p></th>
+<th class="head"><p>Training split (%)</p></th>
+<th class="head"><p>Validation split (%)</p></th>
+<th class="head"><p>Test split (%)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Small</p></td>
+<td><p>60</p></td>
+<td><p>20</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><td><p>Medium</p></td>
+<td><p>80</p></td>
+<td><p>10</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>Large</p></td>
+<td><p>90</p></td>
+<td><p>5</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>Very large</p></td>
+<td><p>98</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>The split may benefit from being stratified (preserving original class frequencies) to ensure that each set has a sample of the classes.</p>
+</div>
+<div class="section" id="cross-validation">
+<h3><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#cross-validation">Cross-validation</a><a class="headerlink" href="#cross-validation" title="Permalink to this headline">¶</a></h3>
+<p>Cross-validation estimates how well a model generalises to new data <em>before</em> you check it on the <em>single-use</em> test data.</p>
+<p>It estimates the <em>variability</em> in the <em>training</em> score.</p>
+<p>This repeats the <em>training/validation</em> split multiple times (<em>the test data remains untouched</em>).</p>
+<p>There are various methods for cross-validation.</p>
+<p>These are mainly variations of K-fold cross-validation, where you split the data up K times (e.g., 5).</p>
+<p>Variations then consider stratifying, shuffling, sampling, and replacing.</p>
+<p>Below is an example for 5-fold cross-validation (i.e., splitting 5 times).</p>
+<p><img alt="cross_validation.png" src="_images/cross_validation_diagram.png" /></p>
+<p><em><a class="reference external" href="https://inria.github.io/scikit-learn-mooc/python_scripts/02_numerical_pipeline_cross_validation.html">Image source</a></em></p>
+</div>
+<div class="section" id="hyperparameters">
+<span id="id2"></span><h3><a class="reference external" href="https://youtu.be/VTE2KlfoO3Q">Hyperparameters</a><a class="headerlink" href="#hyperparameters" title="Permalink to this headline">¶</a></h3>
+<p>These are what <em>you set before</em> model training.</p>
+<p>They control the learning process.</p>
+<p>These include, for example:</p>
+<ul class="simple">
+<li><p>The number of layers.</p></li>
+<li><p>The number of units per layer.</p></li>
+<li><p>The activation function(s).</p></li>
+<li><p>Whether to use dropout.</p></li>
+<li><p>The optimiser learning rate.</p></li>
+<li><p>The batch size.</p></li>
+</ul>
+<p>They are often found through iteratively trying out different options.</p>
+<p>This iterative tuning method can be:</p>
+<ul class="simple">
+<li><p>Systematically over a grid (i.e., grid-search).</p>
+<ul>
+<li><p>Thorough, but slow. Hence, not suitable for problems with many variables.</p></li>
+</ul>
+</li>
+<li><p>Randomly over a grid (i.e., random grid-search).</p>
+<ul>
+<li><p>Faster and more suitable for problems with many variables.</p></li>
+</ul>
+</li>
+<li><p>Other options including:</p>
+<ul>
+<li><p>Using Bayes Theorem (i.e., Bayes grid-search) to choose a new set of hyperparameters to test based on the performance of the prior set.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="parameters">
+<h3><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#parameter">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
+<p>These are what the model learns <em>during training</em> (i.e., the weights / biases / coefficients of the model).</p>
+<p>The weights first need to be <a class="reference external" href="https://youtu.be/s2coXdufOzE">initialised</a> e.g., as zeros, random numbers, etc.</p>
+<p>The parameters are then optimised in training.</p>
+</div>
+<div class="section" id="model">
+<h3><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#model">Model</a><a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h3>
+<p>A model is the machine learning system.</p>
+<p>This includes the architechture, parameters, and hyperparameters.</p>
+</div>
+<div class="section" id="training">
+<h3><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#training">Training</a><a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h3>
+<p>Training is the process of finding the best model.</p>
+<a class="reference internal image-reference" href="_images/unteachable.jpg" id="unteachable-jpg"><img alt="_images/unteachable.jpg" id="unteachable-jpg" src="_images/unteachable.jpg" style="height: 300px;" /></a>
+<p><em><a class="reference external" href="https://vas3k.com/blog/machine_learning/">Image source</a></em></p>
+<div class="section" id="loss-function">
+<h4><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#loss">Loss Function</a><a class="headerlink" href="#loss-function" title="Permalink to this headline">¶</a></h4>
+<p>The loss function measures how accurate the model is during training.</p>
+<p>This is measured as the error on single training example.</p>
+<p>You always want to minimise the loss function.</p>
+<p>A similar concept is the <a class="reference external" href="https://youtu.be/SHEPb1JHw5o">Cost Function</a>, which is the average of the loss functions over the whole training set.</p>
+<p>The loss function is a proxy of the metric (covered below) with a smooth gradient. Note, that in some cases it is actually the same as the metric e.g., mean squared error.</p>
+<p>Common loss functions are:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#mean-squared-error-mse">Mean squared error</a></p>
+<ul>
+<li><p>The average squared loss per example.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://machinelearningmastery.com/cross-entropy-for-machine-learning/">Crossentropy</a></p>
+<ul>
+<li><p>A measure of the difference between two probability distributions.</p></li>
+<li><p>Categorical Crossentropy for binary classification.</p></li>
+<li><p>Sparse Categorical Crossentropy for multi-class classification.</p></li>
+<li><p>Similar to the Negative Log Loss, except that this takes in <em>log</em> probabilities, instead of raw ones.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="gradient-descent">
+<h4><a class="reference external" href="https://youtu.be/uJryes5Vk1o">Gradient descent</a><a class="headerlink" href="#gradient-descent" title="Permalink to this headline">¶</a></h4>
+<p>A group of methods to minimise the loss function.</p>
+<p>It is how the model gets updated based on the data it sees.</p>
+<p>One step of gradient descent includes:</p>
+<ul class="simple">
+<li><p>Forward propagate the inputs through the model to calculate the outputs of each neuron.</p></li>
+<li><p>Calculate the loss (error) and gradient of the loss for these parameters.</p></li>
+<li><p><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#backpropagation">Back propagate</a> these gradients back through the model to update the parameters and reduce the loss.</p></li>
+</ul>
+<p>The gradient of the loss is reduced (optimised) in this process (i.e., the gradient descends).</p>
+<p>It aims to find the best parameters (i.e., the weights and biases that minimise the loss).</p>
+<p>The best parameters represent the single <em>global minimum</em> of the loss (i.e., think of the lowest point in a bowl).</p>
+<p>If there are many peaks and valleys in the loss function, then there may be many <em>local minimums</em> (i.e., where the loss function can’t reduce anymore locally).</p>
+<p>Common methods of gradient descent are:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#stochastic-gradient-descent-sgd">Stochastic Gradient Descent (SGD)</a>.</p>
+<ul>
+<li><p>Uses 1 training example per iteration.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://youtu.be/KKfZLXcF-aE">Batch gradient descent</a>.</p>
+<ul>
+<li><p>Uses all training examples per iteration.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://youtu.be/4qJaSmvhxi8">Mini-batch gradient descent</a>.</p>
+<ul>
+<li><p>Uses a smaller batch (e.g., 32) of training examples per iteration.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="optimiser">
+<h4><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#optimizer">Optimiser</a><a class="headerlink" href="#optimiser" title="Permalink to this headline">¶</a></h4>
+<p>The optimiser is the type of gradient descent used.</p>
+<p>A common choice is the <a class="reference external" href="https://youtu.be/JXQT_vxqwIs">Adam (ADAptive with Momentum) optimiser</a>.</p>
+<p>Adam combines <a class="reference external" href="https://youtu.be/k8fTYJPd3_I">momentum</a> and <a class="reference external" href="https://youtu.be/_e-LFe_igno">RMSprop</a> (Root Mean Squared propagation).</p>
+<p>Momentum remembers past gradients to speed up learning and get out of local minimuns.</p>
+<p>RMSprop speeds up learning in a specific direction.</p>
+</div>
+<div class="section" id="metric">
+<h4><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#metric">Metric</a><a class="headerlink" href="#metric" title="Permalink to this headline">¶</a></h4>
+<p>The goal of machine learning is predicting new data.</p>
+<p>Hence, the <a class="reference external" href="https://developers.google.com/machine-learning/glossary/#objective">objective</a> is to minimise the <em>test error</em> (as this represents new data).</p>
+<p>This is the evaluation metric i.e., the number you primarily care about.</p>
+<p>It is helpful to have a <a class="reference external" href="https://youtu.be/sofffBNhVSo">single evaluation metric</a> to guide decisions.</p>
+</div>
+</div>
+<div class="section" id="error-analysis">
+<h3><a class="reference external" href="https://youtu.be/JoAxZsdw_3w">Error analysis</a><a class="headerlink" href="#error-analysis" title="Permalink to this headline">¶</a></h3>
+<p>This is where you manually analyse the prediction errors from the model to help guide how to improve the model.</p>
+<p>An example is a <a class="reference external" href="https://developers.google.com/machine-learning/glossary/#confusion-matrix">confusion matrix</a>. This is where you aggregate a classifcation model’s correct and incorrect guesses. This is useful to see what classes have more errors.</p>
+<p>For example, you could have a classification model to predict whether or not there is a tumor in the image:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Tumor (predicted)</p></th>
+<th class="head"><p>Non-Tumor (predicted)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Tumor (ground truth)</p></td>
+<td><p>18</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Non-Tumor (ground truth)</p></td>
+<td><p>6</p></td>
+<td><p>452</p></td>
+</tr>
+</tbody>
+</table>
+<p>So, here there are 19 ground truth images that had tumors (18 + 1), of which the model predicted 18 correct (<em>true positives, TP</em>) and 1 wrong (<em>false negative, FN</em>).</p>
+<p>Also, there are 458 ground truth images that did not have tumors (452 + 6), of which the model predicted 452 correct (<em>true negatives, TN</em>) and 6 wrong (<em>false positives, FP</em>).</p>
+<p>The <em>precision</em> identifies the frequency of correct predictions for positive cases. Here:</p>
+<p><span class="math notranslate nohighlight">\(precision = TP / (TP + FP)\)</span><br />
+<span class="math notranslate nohighlight">\(precision = 18 / (18 + 6)\)</span><br />
+<span class="math notranslate nohighlight">\(precision = 0.75\)</span></p>
+<p><em>Recall</em> represents: out of all the possible positive labels, how many did the model correctly identify. Here:</p>
+<p><span class="math notranslate nohighlight">\(recall = TP / (TP + FN)\)</span><br />
+<span class="math notranslate nohighlight">\(recall = 18 / (18 + 1)\)</span><br />
+<span class="math notranslate nohighlight">\(recall = 0.95\)</span></p>
+<p>There is often a trade-off between precision and recall (i.e., one goes up and the other goes down).</p>
+</div>
+<div class="section" id="underfit">
+<h3><a class="reference external" href="https://youtu.be/SjQyLhQIXSM">Underfit</a><a class="headerlink" href="#underfit" title="Permalink to this headline">¶</a></h3>
+<p>A model <em>underfits</em> the data when it has <em>high bias</em> (i.e., systematic errors).</p>
+<p>This means the model is <em>too simple</em> to capture the association (i.e., it doesn’t have enough capacity to learn the generalisation).</p>
+<p>You can tell that the model underfits because there are <em>both</em> high training errors and high test errors.</p>
+<p>To reduce underfitting, try:</p>
+<ul class="simple">
+<li><p>Adding more features.</p></li>
+<li><p>Adding more complex features.</p></li>
+<li><p>Decreasing <a class="reference external" href="https://youtu.be/6g0t3Phly2M">regularisation</a> (i.e., decrease the preference for simpler functions).</p></li>
+</ul>
+<p><em>More training data is unlikely to help a model that underfits the data.</em></p>
+</div>
+<div class="section" id="overfit">
+<span id="id3"></span><h3><a class="reference external" href="https://youtu.be/u73PU6Qwl1I">Overfit</a><a class="headerlink" href="#overfit" title="Permalink to this headline">¶</a></h3>
+<p>A model <em>overfits</em> the data when it has <em>high variance</em> (i.e., varies a lot).</p>
+<p>This means the model is <em>too complex</em> to capture the association (i.e., it has too much capacity, so the training data is memorised).</p>
+<p>You can tell that the model overfits because there are <em>low</em> training errors <em>but</em> high test errors (i.e., there is a big difference between these errors, where the model doesn’t work well on new data because it overfitted to the noise in the training data).</p>
+<p>To reduce overfitting, try:</p>
+<ul class="simple">
+<li><p>Adding more data.</p></li>
+<li><p>Using fewer or simpler features.</p></li>
+<li><p>Increasing <a class="reference external" href="https://youtu.be/6g0t3Phly2M">regularisation</a> (i.e., increase the preference for simpler functions).</p>
+<ul>
+<li><p><a class="reference external" href="https://developers.google.com/machine-learning/glossary/#l1-regularization">L1</a> regularlisation penalises weights in proportion to the <em>sum</em> of their absolute values.</p></li>
+<li><p><a class="reference external" href="https://youtu.be/6g0t3Phly2M">L2</a> regularlisation penalises weights in proportion to the <em>square</em> of their absolute values.</p></li>
+<li><p><a class="reference external" href="https://youtu.be/D8PJAL-MZv8">Dropout</a> regularlisation removes a random selection of neurons for a training step.</p></li>
+</ul>
+</li>
+<li><p>A smaller neural network with fewer layers/parameters.</p></li>
+</ul>
+<p>Below is an example of underfitting (linear line through non-linear data) and overfitting (very-high order polynomial passing through every training point).</p>
+<p><img alt="underfit_vs_overfit.png" src="_images/underfit_vs_overfit.png" /></p>
+<p><em><a class="reference external" href="https://www.educative.io/edpresso/overfitting-and-underfitting">Image source</a></em></p>
+</div>
+</div>
+<div class="section" id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question-1 admonition">
+<p class="admonition-title">Question 1</p>
+<p>What does <em>deep</em> mean in deep learning?</p>
+</div>
+<div class="admonition-question-2 admonition">
+<p class="admonition-title">Question 2</p>
+<p>Activation functions help neural networks learn complex functions because they are:</p>
+<ul class="simple">
+<li><p>Linear</p></li>
+<li><p>Non-linear</p></li>
+</ul>
+</div>
+<div class="admonition-question-3 admonition">
+<p class="admonition-title">Question 3</p>
+<p>What is a tensor?</p>
+</div>
+<div class="admonition-question-4 admonition">
+<p class="admonition-title">Question 4</p>
+<p>I have labelled pictures of cats and dogs that I’d like a model to classify.</p>
+<p>Is this a supervised or unsupervised problem?</p>
+</div>
+<div class="admonition-question-5 admonition">
+<p class="admonition-title">Question 5</p>
+<p>I’d like a model to predict house prices from their features.</p>
+<p>Is this a classification or regression problem?</p>
+</div>
+<div class="admonition-question-6 admonition">
+<p class="admonition-title">Question 6</p>
+<p>How many times can I use the test data?</p>
+</div>
+<div class="admonition-question-7 admonition">
+<p class="admonition-title">Question 7</p>
+<p>I’ve decided on the number of hidden layers to use in my neural network.</p>
+<p>Is this a parameter or hyperparameter?</p>
+</div>
+<div class="admonition-question-8 admonition">
+<p class="admonition-title">Question 8</p>
+<p>Do I want to minimise or maximise the loss?</p>
+</div>
+<div class="admonition-question-9 admonition">
+<p class="admonition-title">Question 9</p>
+<p>A model underfits the data when it has:</p>
+<ul class="simple">
+<li><p>High bias</p></li>
+<li><p>High variance</p></li>
+</ul>
+</div>
+<div class="admonition-question-10 admonition">
+<p class="admonition-title">Question 10</p>
+<p>If my model underfits, what might help:</p>
+<ul class="simple">
+<li><p>Adding more features</p></li>
+<li><p>Adding more data</p></li>
+</ul>
+</div>
+<div class="admonition-question-11 admonition">
+<p class="admonition-title">Question 11</p>
+<p>If my model overfits, what might help:</p>
+<ul class="simple">
+<li><p>Adding more complex features</p></li>
+<li><p>Increasing regularlisation</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="solutions">
+<h2><a class="reference internal" href="06_solutions.html#fundamentals"><span class="std std-ref">Solutions</span></a><a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="key-points">
+<h2>Key Points<a class="headerlink" href="#key-points" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>Machine learning and deep learning are a range of prediction methods that learn associations from training data.</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>The objective is for the models to generalise to new data.</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>They mainly use tensors (multi-dimensional arrays) as inputs.</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>Problems are mainly either supervised (if you provide labels) or unsupervised (if you don’t provide labels).</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>Problems are either classification (if you’re trying to predict a discrete category) or regression (if you’re trying to predict a continuous number).</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>Data is split into training, validation, and test sets.</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>The models only learn from the training data.</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>The test set is used only once.</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>Hyperparameters are set before model training.</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>Parameters (i.e., the weights and biases) are learnt during model training.</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>The aim is to minimise the loss function.</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>The model underfits when it has high bias.</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <em>The model overfits when it has high variance.</em></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="further-information">
+<h2>Further information<a class="headerlink" href="#further-information" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="good-practices">
+<h3>Good practices<a class="headerlink" href="#good-practices" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Start simple.</p></li>
+<li><p>Incrementally test ideas.</p></li>
+<li><p>The choice of algortihm depends on the problem/data (i.e., whether you use linear regression, deep learning, etc.).</p>
+<ul>
+<li><p>What assumptions are appropriate?</p></li>
+</ul>
+</li>
+<li><p>Future data should be from the same distribution as the training data (to avoid <em>data drift</em>).</p></li>
+<li><p>The test set should be representative of the future data you’re trying to predict. For example:</p>
+<ul>
+<li><p>For time series, test data may be 2021, while training data was 2015-2020.</p></li>
+<li><p>For medical application, test data may be completely new patients, not multiple visits from same patients in training data.</p></li>
+</ul>
+</li>
+<li><p>Consider ways to reduce the dimensionality of the data (e.g., using PCA, Principle Component Analysis).</p></li>
+<li><p>Have a baseline to compare the model skill against (i.e., simple model, human performance, etc.).</p></li>
+</ul>
+</div>
+<div class="section" id="caveats">
+<h3>Caveats<a class="headerlink" href="#caveats" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Predictions are primarily based on associations, not explanations or causation.</p></li>
+<li><p>Predictions and models are specific to the data they were trained on.</p></li>
+</ul>
+</div>
+<div class="section" id="resources">
+<h3>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h3>
+<p><strong>Bold</strong> are highly-recommended.</p>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/">Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition</a>, Aurélien Géron, 2019, O’Reilly Media, Inc.</strong></p>
+<ul>
+<li><p><strong><a class="reference external" href="https://github.com/ageron/handson-ml2">Jupyter notebooks</a>.</strong></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.manning.com/books/deep-learning-with-python-second-edition?a_aid=keras&amp;a_bid=76564dff">Deep Learning with Python, 2nd Edition</a>, François Chollet, 2021, Manning.</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/fchollet/deep-learning-with-python-notebooks">Jupyter notebooks</a>.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="http://aima.cs.berkeley.edu/">Artificial Intelligence: A Modern Approach, 4th edition</a>, Stuart Russell and Peter Norvig, 2021, Pearson.</p></li>
+<li><p><a class="reference external" href="https://www.deeplearning.ai/programs/">Machine Learning Yearning</a>, Andrew Ng.</p></li>
+</ul>
+</div>
+<div class="section" id="online-courses">
+<span id="id4"></span><h3>Online courses<a class="headerlink" href="#online-courses" title="Permalink to this headline">¶</a></h3>
+<p><strong>Bold</strong> are highly-recommended.</p>
+<div class="section" id="machine-learning">
+<h4>Machine learning<a class="headerlink" href="#machine-learning" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://www.coursera.org/learn/machine-learning">Machine learning</a>, Coursera, Andrew Ng.</strong></p>
+<ul>
+<li><p><strong>CS229, Stanford University: <a class="reference external" href="https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU">Video lectures</a>.</strong></p></li>
+</ul>
+</li>
+<li><p><strong><a class="reference external" href="http://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/">Machine Learning for Intelligent Systems</a>, Kilian Weinberger, 2018.</strong></p>
+<ul>
+<li><p><strong>CS4780, Cornell: <a class="reference external" href="https://youtube.com/playlist?list=PLl8OlHZGYOQ7bkVbuRthEsaLr7bONzbXS">Video lectures</a>.</strong></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.youtube.com/playlist?list=PLoROMvodv4rO1NB9TD4iUZ3qghGEGtqNX">Artificial Intelligence: Principles and Techniques</a>, Percy Liang and Dorsa Sadigh, CS221, Standord, 2019.</p></li>
+<li><p><a class="reference external" href="https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn/">Machine learning in Python with scikit-learn</a>, scikit-learn developers, 2022.</p>
+<ul>
+<li><p><a class="reference external" href="https://inria.github.io/scikit-learn-mooc/">Course materials</a></p></li>
+<li><p><a class="reference external" href="https://github.com/INRIA/scikit-learn-mooc/">Jupyter Notebooks</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="deep-learning">
+<h4>Deep learning<a class="headerlink" href="#deep-learning" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://www.coursera.org/specializations/deep-learning">Deep Learning Specialization</a>, Coursera, <a class="reference external" href="http://DeepLearning.AI">DeepLearning.AI</a> (<em>NumPy, Keras, TensorFlow</em>)</strong></p>
+<ul>
+<li><p><strong>CS230, Stanford University: <a class="reference external" href="https://www.youtube.com/playlist?list=PLoROMvodv4rOABXSygHTsbvUz4G_YQhOb">Video lectures</a>, <a class="reference external" href="http://cs230.stanford.edu/syllabus/">Syllabus</a></strong></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://atcold.github.io/NYU-DLSP21/">NYU Deep Learning</a>, Yann LeCun and Alfredo Canziani, NYU, 2021 (<em>PyTorch</em>)</p>
+<ul>
+<li><p><a class="reference external" href="https://www.youtube.com/playlist?list=PLLHTzKZzVU9e6xUfG10TkTWApKSZCzuBI">Video lectures</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "swd8_intro_ml"
+        },
+        kernelOptions: {
+            kernelName: "swd8_intro_ml",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'swd8_intro_ml'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="00_overview.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Overview</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02_tools.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tools</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Luke Conibear<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
