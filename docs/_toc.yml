@@ -1,0 +1,15 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-article
+root: index
+sections:
+- file: 00_overview
+  sections:
+  - file: 01_fundamentals
+  - file: 02_tools
+  - file: 03_data
+  - file: 04_models
+  - file: 05_distributed
+  - file: 06_solutions
+- file: 07_summary
