@@ -1,5 +1,7 @@
 # SWD8: Introduction to Machine Learning
 
+[![DOI](https://zenodo.org/badge/483669317.svg)](https://zenodo.org/badge/latestdoi/483669317)
+
 Booking for this course is through the IT Training Unit.  
 
 Click [here](...) to book.  
