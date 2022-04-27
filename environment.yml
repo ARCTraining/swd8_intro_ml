@@ -1,4 +1,4 @@
-name: swd8_intro_ml_test
+name: swd8_intro_ml
 channels:
   - pytorch
   - nvidia
@@ -26,6 +26,7 @@ dependencies:
     - lightning-flash
     - pytorch-lightning
     - ray
+    - "ray[tune]"
     - tensorboard
     - tensorflow
     - tensorflow-datasets
