@@ -25,6 +25,7 @@ dependencies:
     - lightning-bolts
     - lightning-flash
     - pytorch-lightning
+    - 'lightning-flash[image]'
     - ray
     - "ray[tune]"
     - tensorboard
